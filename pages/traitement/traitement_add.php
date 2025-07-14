@@ -11,6 +11,10 @@ if(isset($_GET['nom']) && isset($_GET['date_naissance']) && isset($_GET['genre']
     $mdp = $_GET['mdp'];
 
     adduser($nom,$date_naissance,$genre,$ville,$email,$mdp);
+    $id = verifyuser($email, $mdp);
+    echo $id;
+    //header("Location: ../modele.php?page='home.php'&id=$id");
+
 }
 
 ?>

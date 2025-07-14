@@ -21,7 +21,7 @@ ini_set("display error", "1");
             return $list['id_membre'];
         }    
         else{
-            header("Location: ../pages/add.php");
+            return 0;
         }    
     }
 
