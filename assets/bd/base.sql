@@ -86,3 +86,16 @@ INSERT INTO final_emprunt (id_objet, id_membre, date_emprunt, date_retour) VALUE
 (35, 1, '2023-08-14', '2023-08-24'),
 (40, 2, '2023-09-03', '2023-09-13'),
 (3, 3, '2023-10-11', '2023-10-21');
+
+
+CREATE OR REPLACE VIEW v_objet_detail AS
+SELECT 
+    o.id_objet,
+    o.nom_objet,
+    o.id_categorie,
+    c.nom_categorie,
+    o.id_membre,
+    m.nom AS nom_membre
+FROM final_objet o
+JOIN final_categorie_objet c ON o.id_categorie = c.id_categorie
+JOIN final_membre m ON o.id_membre = m.id_membre;

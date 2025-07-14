@@ -7,10 +7,10 @@ $mdp = $_GET['mdp'];
 $id = verifyuser($email, $mdp);
 
 if ($id > 0){
-header("Location: ../../pages/modele.php?page='home.php'&id=$id");
+header("Location: ../modele.php?page=home.php");
 
 }else{
-header("Location: ../../pages/modele.php?page='add.php'");
+header("Location: ../modele.php?page=add.php");
     
 }
 
